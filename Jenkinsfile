@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     sshagent(['ssh']) {
-                        sh "ssh -o StrictHostKeyChecking=no ubuntu@10.0.1.155 'docker pull devopscow/todo:1 && docker stop todo && docker rm todo && docker run -d -p 80:80 devopscow/todo:1'"
+                        sh "ssh -o StrictHostKeyChecking=no jenkins@10.0.1.155 'docker pull devopscow/todo:1 && docker stop todo && docker rm todo && docker run -d -p 80:80 devopscow/todo:1'"
                     }
                 }
             }
