@@ -17,7 +17,7 @@ apt-get update
 
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-usermod -aG docker jenkins
+usermod -aG docker ubuntu
 newgrp docker
 
 docker run --name todo -p 80:80 devopscow/todo:1
