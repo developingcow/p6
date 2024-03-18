@@ -1,12 +1,14 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'nodejs 21.7.1'
+    }
     stages {
         stage('Source') {
             steps {
                 echo 'Handled by git scm'
             }
         }
-        
         stage('Build') {
            steps {
                 dir ('react') { 
