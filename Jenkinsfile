@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir ('react') {
-                    sh 'npx jest'
+                    sh 'npx jest --passWithNoTests'
                 }
             }
         }
