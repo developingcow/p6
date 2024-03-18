@@ -47,7 +47,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                script {
+                    sshagent(['ssh']) {
+                        sh "ssh -o StrictHostKeyChecking=no ubuntu@10.0.1.155 'echo hello'"
+                    }
+                }
             }
         }
     }
