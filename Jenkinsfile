@@ -27,6 +27,7 @@ pipeline {
 
         stage('Push') {
             steps {
+                sh 'ls -la'
                 dir ('react') {
                     script {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockerpat') {
