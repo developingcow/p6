@@ -26,11 +26,15 @@ pipeline {
         }
 
         stage('Push') {
-            script {
-                    docker.withRegistry('https://index.docker.io/v1/', dockerpat) {
-                        docker.build('devopscow/todo').push()
+            steps {
+                dir ('react') {
+                    script {
+                        docker.withRegistry('https://index.docker.io/v1/', dockerpat) {
+                            docker.build('devopscow/todo').push()
+                        }
                     }
                 }
+            }
         }
 
         stage('Deploy') {
