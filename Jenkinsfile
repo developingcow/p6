@@ -30,7 +30,7 @@ pipeline {
                 dir ('react') {
                     script {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockerpat') {
-                            docker.build('devopscow/todo').push()
+                            docker.build('devopscow/todo:1').push()
                         }
                     }
                 }
