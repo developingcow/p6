@@ -36,8 +36,8 @@ pipeline {
                         echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
                         '''
                         
-                        sh 'sudo docker build -t devopscow/todo:1 .'
-                        sh 'sudo docker push devopscow/todo:1'
+                        sh 'docker build -t devopscow/todo:1 .'
+                        sh 'docker push devopscow/todo:1'
                     }
                 }
                 }
