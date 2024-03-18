@@ -19,7 +19,9 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Testing..'
+                dir ('react') {
+                    sh 'npx jest'
+                }
             }
         }
 
