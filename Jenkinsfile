@@ -26,9 +26,11 @@ pipeline {
         }
 
         stage('Push') {
-            steps {
-                echo 'Pushing to Docker Hub..'
-            }
+            script {
+                    docker.withRegistry('https://index.docker.io/v1/', dockerpat) {
+                        docker.build('devopscow/todo').push()
+                    }
+                }
         }
 
         stage('Deploy') {
