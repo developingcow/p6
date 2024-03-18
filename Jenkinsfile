@@ -27,13 +27,19 @@ pipeline {
 
         stage('Push') {
             steps {
-                sh 'ls -la'
                 dir ('react') {
                     script {
-                        docker.withRegistry('https://index.docker.io/v1/', 'dockerpat') {
-                            docker.build('devopscow/todo:1').push()
-                        }
+                    // Bind credentials
+                    withCredentials([usernamePassword(credentialsId: 'dockerpat', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        // Login to Docker within shell script
+                        sh '''
+                        echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+                        '''
+                        
+                        sh 'sudo docker build -t devopscow/todo:1 .'
+                        sh 'sudo docker push devopscow/todo:1'
                     }
+                }
                 }
             }
         }
