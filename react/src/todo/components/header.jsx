@@ -8,7 +8,7 @@ export function Header({ dispatch }) {
 
     return (
         <header className="header" data-testid="header">
-            <h1>Kow Todo</h1>
+            <h1>Todo</h1>
             <Input onSubmit={addItem} label="New Todo Input" placeholder="What needs to be done?" />
         </header>
     );
