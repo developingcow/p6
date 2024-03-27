@@ -16,3 +16,6 @@ Prereqs: AWS, Terraform
 
 When you push a new commit to GitHub, it will trigger a webhook and then a Jenkins job.  
 The job will then build and test and deploy the new container image to the ec2 instance.
+
+# Teardown
+`terraform destroy`
