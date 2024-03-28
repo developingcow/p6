@@ -1,5 +1,10 @@
 Group member: Hong
 
+Source for demo app: https://github.com/tastejs/todomvc  
+# Diagram
+![Cloud Architecture](https://github.com/developingcow/p6/assets/155276353/d9a21866-3e51-42cb-9ffd-3f6f094ffc38)
+
+
 # Setup
 Prereqs: AWS, Terraform
 1. `terraform apply`
