@@ -19,3 +19,6 @@ The job will then build and test and deploy the new container image to the ec2 i
 
 # Teardown
 `terraform destroy`
+
+## Notes:  
+The app will be accessible at the external ip of the public ec2 instance.
